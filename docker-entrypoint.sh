@@ -60,7 +60,7 @@ if [ ! -z "$FACTORIO_REQUIRE_USER_VERIFICATION" ]; then
 fi
 
 if [ ! -z "$FACTORIO_IGNORE_PLAYER_LIMIT_FOR_RETURING_PLAYERS" ]; then
-  write "max_upload_in_kilobytes_per_second" $FACTORIO_IGNORE_PLAYER_LIMIT_FOR_RETURING_PLAYERS
+  write "ignore_player_limit_for_returning_players" $FACTORIO_IGNORE_PLAYER_LIMIT_FOR_RETURING_PLAYERS
 fi
 
 if [ ! -z "$FACTORIO_ALLOW_COMMANDS" ]; then
@@ -95,5 +95,5 @@ if [ ! -z "$FACTORIO_ADMINS" ]; then
   write "admins" $FACTORIO_ADMINS
 fi
 
-exec 0<&-
+#exec 0<&-
 exec $@
