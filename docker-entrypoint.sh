@@ -95,5 +95,5 @@ if [ ! -z "$FACTORIO_ADMINS" ]; then
   write "admins" $FACTORIO_ADMINS
 fi
 
-#exec 0<&-
+exec 0<&-
 exec $@
