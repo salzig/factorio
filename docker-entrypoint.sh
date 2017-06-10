@@ -92,8 +92,9 @@ if [ ! -z "$FACTORIO_AUTOSAVE_ONLY_ON_SERVER" ]; then
 fi
 
 if [ ! -z "$FACTORIO_ADMINS" ]; then
-  write "admins" $FACTORIO_ADMINS
+  jq -c "setpath([\"admin\",0];\"$FACTORIO_ADMINS\")" $settings_file > ${settings_file}.tmp
+  mv ${settings_file}.tmp $settings_file
 fi
 
-exec 0<&-
+#exec 0<&-
 exec $@
