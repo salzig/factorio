@@ -92,7 +92,7 @@ if [ ! -z "$FACTORIO_AUTOSAVE_ONLY_ON_SERVER" ]; then
 fi
 
 if [ ! -z "$FACTORIO_ADMINS" ]; then
-  jq -c "setpath([\"admin\",0];\"$FACTORIO_ADMINS\")" $settings_file > ${settings_file}.tmp
+  jq -c "setpath([\"admins\",0];\"$FACTORIO_ADMINS\")" $settings_file > ${settings_file}.tmp
   mv ${settings_file}.tmp $settings_file
 fi
 
