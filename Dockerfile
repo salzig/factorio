@@ -2,7 +2,7 @@ FROM frolvlad/alpine-glibc:alpine-3.9
 
 RUN apk --no-cache add jq
 
-ENV FACTORIO_VERSION 1.1.38
+ENV FACTORIO_VERSION 1.1.39
 
 WORKDIR /opt
 RUN apk add --no-cache openssl && wget -qO /tmp/factorio.tar https://factorio.com/get-download/${FACTORIO_VERSION}/headless/linux64 && tar -xf /tmp/factorio.tar -C . && rm /tmp/factorio.tar && apk del openssl
